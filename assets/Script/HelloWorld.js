@@ -34,6 +34,14 @@ cc.Class({
             default: null,
             type: cc.Button
         },
+        load_256_btn: {
+            default: null,
+            type: cc.Button
+        },
+        load_180_btn: {
+            default: null,
+            type: cc.Button
+        },
         image_node: {
             default: null,
             type: cc.Sprite
@@ -55,6 +63,8 @@ cc.Class({
         this.load_512_btn.node.on('click',this.load_512,this);
         this.load_430_btn.node.on('click',this.load_430,this);
         this.load_300_btn.node.on('click',this.load_300,this);
+        this.load_256_btn.node.on('click',this.load_256,this);
+        this.load_180_btn.node.on('click',this.load_180,this);
     },
 
     performanceTest: function (button) {
@@ -118,6 +128,16 @@ cc.Class({
     },
     load_300: function() {
         cc.resources.load('test300', cc.SpriteFrame, (err, asset) => {
+            this.image_node.spriteFrame = asset;
+          });
+    },
+    load_256: function() {
+        cc.resources.load('test256', cc.SpriteFrame, (err, asset) => {
+            this.image_node.spriteFrame = asset;
+          });
+    },
+    load_180: function() {
+        cc.resources.load('test180', cc.SpriteFrame, (err, asset) => {
             this.image_node.spriteFrame = asset;
           });
     },
